@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalpha.c                                       :+:    :+:            */
+/*   ft_print_integer.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: alexander <alexander@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/05 15:58:36 by alexander     #+#    #+#                 */
-/*   Updated: 2021/07/29 22:33:29 by alexander     ########   odam.nl         */
+/*   Created: 2021/09/07 22:15:47 by alexander     #+#    #+#                 */
+/*   Updated: 2021/09/07 22:46:26 by alexander     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "../includes/ft_printf.h"
+
+void	ft_print_integer(print_flags *flag)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
+	int i;
+	char *converted;
+
+	i = va_arg(flag->args, int);
+	converted = ft_itoa(i);
+	i = 0;
+	while (converted[i] != '\0')
+	{
+		write(1, &converted[i], 1);
+		i++;
+	}
 }

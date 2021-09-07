@@ -6,7 +6,7 @@
 /*   By: alexander <alexander@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/29 17:07:51 by alexander     #+#    #+#                 */
-/*   Updated: 2021/07/30 13:04:40 by alexander     ########   odam.nl         */
+/*   Updated: 2021/09/07 22:22:29 by alexander     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_check_format(print_flags *flag)
 			ft_print_char(flag);
 		else if(*flag->format == 's')
 			ft_print_string(flag);
+		if(*flag->format == 'i')
+			ft_print_integer(flag);
 /*		if(format[i] == 'p')
 			ft_print_pointer(flag);
 		if(format[i] == 'd')
 			ft_print_decimal(flag);
-		if(format[i] == 'i')
-			ft_print_integer(flag);
 		if(format[i] == 'u')
 			ft_print_unsigned_decimal(flag);
 		if(format[i] == 'x')
