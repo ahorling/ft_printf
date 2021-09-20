@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 15:18:52 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/20 15:23:34 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/09/20 15:38:21 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_numberleng(long long n)
 	int	length;
 
 	length = 0;
-	if (n = 0)
+	if (n == 0)
 		return (1);
 	if (n < 0)
 	{
