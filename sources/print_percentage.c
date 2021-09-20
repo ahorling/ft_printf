@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 13:57:29 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/20 14:00:05 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/09/20 15:12:01 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_percentage(s_info *info)
 {
-	ft_putchar('%', 1);
+	ft_putchar('%');
 	info->format++;
 	info->length++;
 }

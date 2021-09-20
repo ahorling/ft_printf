@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_string.c                                     :+:    :+:            */
+/*   ft_numberleng.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/20 14:54:19 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/20 15:06:32 by ahorling      ########   odam.nl         */
+/*   Created: 2021/09/20 15:18:52 by ahorling      #+#    #+#                 */
+/*   Updated: 2021/09/20 15:23:34 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-
-void	print_string(s_info *info)
+int	ft_numberleng(long long n)
 {
-	char	*string;
-	int length;
+	int	length;
 
-	string = va_arg(info->arg, char *)
-	if (string == NULL)
-		string == "(null)"
-	length = ft_strlen(string);
-	ft_putstr(string);
-	info->length = info->length + length;
-	info->format++;
-	free(string);
+	length = 0;
+	if (n = 0)
+		return (1);
+	if (n < 0)
+	{
+		n = -n;
+		length++;
+	}
+	while (n > 0)
+	{
+		length++;
+		n = n / 10;
+	}
+	return (length);
 }

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_string.c                                     :+:    :+:            */
+/*   ft_putchar.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/20 14:54:19 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/20 15:06:32 by ahorling      ########   odam.nl         */
+/*   Created: 2021/09/20 15:07:19 by ahorling      #+#    #+#                 */
+/*   Updated: 2021/09/20 15:10:13 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "libft.h"
 
-void	print_string(s_info *info)
+void	ft_putchar(char c)
 {
-	char	*string;
-	int length;
-
-	string = va_arg(info->arg, char *)
-	if (string == NULL)
-		string == "(null)"
-	length = ft_strlen(string);
-	ft_putstr(string);
-	info->length = info->length + length;
-	info->format++;
-	free(string);
+	write(1, &c, 1);
 }
