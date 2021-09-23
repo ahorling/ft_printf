@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 11:57:29 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/20 13:57:19 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/09/23 14:51:58 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	analyze_conversion(s_info *info)
 		print_hexa_upper(s_info *info);
 	if (conversion_flag == 'u')
 		print_unsigned(s_info *info);
+	if (conversion_flag == 'p')
+		print_pointer(s_info *info)
 }
 
 int		ft_printf(const char *format, ...)
@@ -39,7 +41,7 @@ int		ft_printf(const char *format, ...)
 	length = 0;
 	info = (s_info *)malloc(sizeof(s_info));
 	va_start(info->arg, format);
-	info->format = format;
+	info->format = ft_strdup(format);
 	while (format[i] != '\0')
 	{
 		while (format[i] != '%')
