@@ -6,39 +6,18 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 14:15:41 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/23 14:29:14 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/09/23 14:59:04 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-void	ft_print_hexa_upper(int n)
+void	print_hexa_upper(s_info info)
 {
-	int		i;
-	char	string[100];
-	int		temp;
+	long long	n;
+	int			length;
 
-	i = 0;
-	temp = 0;
-	while (n != 0)
-	{
-		temp = n % 16;
-		if (temp < 10)
-		{
-			string[i] = temp + 48;
-			i++;
-		}
-		if (temp > 9)
-		{
-			string[i] = temp + 55;
-			i++;
-		}
-		n = n / 16;
-	}
-	i--;
-	while (i >= 0)
-	{
-		write (1, &string[i], 1);
-		i--;
-	}
-}
+	n = (unsigned int)va_arg(info->arg, long long)
+	length = ft_hexaupper(n);
+	info->format++;
+	info->length = info->length + length;
