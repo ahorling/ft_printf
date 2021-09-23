@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 13:00:27 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/20 15:40:08 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/09/23 15:03:37 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr(char *string);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
-int	ft_numberleng(long long n);
+int		ft_numberleng(long long n);
+int		ft_print_hexa_lower(unsigned int n);
+int		ft_print_hexa_upper(unsigned int n);
 
 #endif

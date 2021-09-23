@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 13:37:27 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/23 14:59:01 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/09/23 15:02:24 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_hexa_lower(s_info info)
 	int			length;
 
 	n = (unsigned int)va_arg(info->arg, long long)
-	length = ft_hexalower(n);
+	length = ft_print_hexa_lower(n);
 	info->format++;
 	info->length = info->length + length;
 }

@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 14:15:41 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/23 14:59:04 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/09/23 15:02:23 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	print_hexa_upper(s_info info)
 	int			length;
 
 	n = (unsigned int)va_arg(info->arg, long long)
-	length = ft_hexaupper(n);
+	length = ft_print_hexa_upper(n);
 	info->format++;
 	info->length = info->length + length;
