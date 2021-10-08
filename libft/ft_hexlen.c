@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_hexa_upper.c                                 :+:    :+:            */
+/*   ft_hexlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 14:15:41 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/08 18:02:19 by ahorling      ########   odam.nl         */
+/*   Created: 2021/10/08 17:38:44 by ahorling      #+#    #+#                 */
+/*   Updated: 2021/10/08 17:53:09 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "libft.h"
 
-void	print_hexa_upper(s_info info)
+int	ft_hexlen(unsigned long n)
 {
-	unsigned long	n;
-	char			*hexa_string
+	int	size;
 
-	n = (unsigned int)va_arg(info->arg, unsigned long);
-	hexa_string = ft_ulong_to_hexa_upper(n);
-	ft_putstr(hexa_string);
-	info->format++;
-	info->length = info->length + ft_strlen(hexa_string);
+	size = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n = n / 16;
+		size++;
+	}
+	return (size);
 }

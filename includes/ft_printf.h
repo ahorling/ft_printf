@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 13:26:19 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/20 13:51:45 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/10/08 17:55:05 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ typedef struct	string_info
 {
 	const char		*format;
 	va_list			argumments;
-	unsigned int	length;
+	size_t			length;
 }	s_info;

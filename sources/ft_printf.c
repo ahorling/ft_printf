@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 11:57:29 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/23 14:51:58 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/10/08 16:24:37 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	analyze_conversion(s_info *info)
 int		ft_printf(const char *format, ...)
 {
 	s_info	*info;
-	int 	length;
+	size_t	length;
 
 	length = 0;
 	info = (s_info *)malloc(sizeof(s_info));
@@ -50,7 +50,7 @@ int		ft_printf(const char *format, ...)
 			info->format++;
 			info->length++;
 		}
-		if (*infor->format == '%')
+		if (*info->format == '%')
 			analyze_conversion(info);
 	}
 	va_end(arg);

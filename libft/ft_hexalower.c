@@ -6,20 +6,24 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 14:33:05 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/23 14:47:45 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/10/08 17:56:44 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_print_hexa_lower(unsigned int n)
+char	*ft_ulong_to_hexa_lower(unsigned long n)
 {
 	int		i;
-	char	string[100];
+	char	*string;
 	int		temp;
-
-	i = 0;
+	
+	i = ft_hexlen(n);
 	temp = 0;
+	string = (char *)malloc(i + 1, sizeof(char));
+	if (string == NULL)
+		free(string);
+	string[i + 1] = '\0';
 	while (n != 0)
 	{
 		temp = n % 16;
@@ -28,14 +32,7 @@ int	ft_print_hexa_lower(unsigned int n)
 		if (temp > 9)
 			string[i] = temp + 87;
 		n = n / 16;
-		i++;
-	}
-	i--;
-	temp = i;
-	while (i >= 0)
-	{
-		write (1, &string[i], 1);
 		i--;
 	}
-	return (temp);
+	return (string);
 }

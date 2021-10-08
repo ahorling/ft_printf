@@ -6,7 +6,7 @@
 #    By: alexander <alexander@student.codam.nl>       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/12/04 10:25:30 by alexander     #+#    #+#                  #
-#    Updated: 2021/09/20 15:35:03 by ahorling      ########   odam.nl          #
+#    Updated: 2021/10/08 17:43:09 by ahorling      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,9 @@ SRC = 	ft_atoi.c \
 		ft_putstr.c \
 		ft_putchar.c \
 		ft_numberleng.c \
+		ft_hexalower.c \
+		ft_hexaupper.c \
+		ft_hexlen.c \
 
 OBJS = $(SRC:.c=.o)
 HEADER = libft.h
