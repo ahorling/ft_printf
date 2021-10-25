@@ -6,23 +6,24 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 13:15:12 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/09/23 14:59:09 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/10/25 16:08:33 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
-unsigned int	ft_putunsigned(unsigned int n)
+void	ft_putunsigned(unsigned int n)
 {
 	if (n > 9)
 	{
-		ft_putunsigned(n / 10)
-		ft_putunsigned(n % 10)
+		ft_putunsigned(n / 10);
+		ft_putunsigned(n % 10);
 	}
 	else
 	{
 		ft_putchar(n + '0');
 	}
+	return ;
 }
 
 void	print_unsigned(s_info *info)

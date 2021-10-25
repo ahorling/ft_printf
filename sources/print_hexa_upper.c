@@ -6,20 +6,21 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 14:15:41 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/08 18:02:19 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/10/25 16:59:48 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
-void	print_hexa_upper(s_info info)
+void	print_hexa_upper(t_info info)
 {
-	unsigned long	n;
-	char			*hexa_string
+	size_t	n;
+	char	*hexa_string;
 
-	n = (unsigned int)va_arg(info->arg, unsigned long);
+	n = (unsigned int)(va_arg(info->arg, unsigned int));
 	hexa_string = ft_ulong_to_hexa_upper(n);
 	ft_putstr(hexa_string);
 	info->format++;
 	info->length = info->length + ft_strlen(hexa_string);
+	return ;
 }
