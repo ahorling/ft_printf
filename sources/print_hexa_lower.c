@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 13:37:27 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/25 16:59:47 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/10/25 17:14:24 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_hexa_lower(t_info info)
 	size_t	n;
 	char	*hexa_string;
 
-	n = (unsigned int)(va_arg(info->arg, unsigned int));
+	n = (unsigned long)(va_arg(info->arg, unsigned long));
 	hexa_string = ft_ulong_to_hexa_lower(n);
 	ft_putstr(hexa_string);
 	info->format++;

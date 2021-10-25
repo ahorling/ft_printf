@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 14:15:41 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/25 16:59:48 by ahorling      ########   odam.nl         */
+/*   Updated: 2021/10/25 17:14:33 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_hexa_upper(t_info info)
 	size_t	n;
 	char	*hexa_string;
 
-	n = (unsigned int)(va_arg(info->arg, unsigned int));
+	n = (unsigned long)(va_arg(info->arg, unsigned long));
 	hexa_string = ft_ulong_to_hexa_upper(n);
 	ft_putstr(hexa_string);
 	info->format++;
