@@ -6,56 +6,61 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 11:57:29 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/25 16:39:16 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/13 17:01:53 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
-void	analyze_conversion(t_info *info)
+void	analyze_conversion(va_list arg, size_t *length, char conversion_flag)
 {
-	info->format++;
 	if (conversion_flag == 'i' || conversion_flag == 'd')
-		print_int(t_info *info);
+		print_int(va_arg(arg, int), length);
 	else if (conversion_flag == 'c')
-		print_char(t_info *info);
+		print_char(va_arg(arg, int), length);
 	else if (conversion_flag == 's')
-		print_string(t_info *info);
+		print_string(va_arg(arg, char*), length);
 	else if (conversion_flag == '%')
-		print_percent(t_info *info);
+		print_percent(length);
 	else if (conversion_flag == 'x')
-		print_hexa_lower(t_info *info);
+		print_hexa_lower(va_arg(arg, unsigned int), length);
 	else if (conversion_flag == 'X')
-		print_hexa_upper(t_info *info);
+		print_hexa_upper(va_arg(arg, unsigned int), length);
 	else if (conversion_flag == 'u')
-		print_unsigned(t_info *info);
+		print_unsigned(va_arg(arg, unsigned int), length);
 	else if (conversion_flag == 'p')
-		print_pointer(t_info *info);
+		print_pointer(va_arg(arg, unsigned long), length);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	size_t	length;
-	t_info	*info;
+	char	conversion_flag;
+	int	i;
+	va_list	arg;
 
 	length = 0;
-	info = (t_info *)malloc(sizeof(t_info));
-	va_start(info->arg, format);
-	info->format = ft_strdup(format);
+	i = 0;
+	if (!format)
+		return(0);
+	va_start(arg, format);
 	while (format[i] != '\0')
 	{
 		while (format[i] != '%')
 		{
-			ft_putchar(*info->format);
-			info->format++;
-			info->length++;
+			ft_putchar(format[i]);
+			i++;
+			length++;
 		}
-		if (*info->format == '%')
-			analyze_conversion(info);
+		if (*string == '%')
+		{
+			i++;
+			conversion_flag = format[i];
+			analyze_conversion(arg, &length, conversion_flag);
+			i++;
+		}
 	}
 	va_end(arg);
-	length = info->length;
-	free(info);
 	return (length);
 }

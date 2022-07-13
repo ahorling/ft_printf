@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 13:15:12 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/25 16:08:33 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/13 17:18:43 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,11 @@ void	ft_putunsigned(unsigned int n)
 	return ;
 }
 
-void	print_unsigned(s_info *info)
+void	print_unsigned(unsigned int i, size_t *length)
 {
-	long long	n;
-	int			length;
+	int			len;
 
-	n = (unsigned int)va_arg(info->format, long long);
-	length = numberleng(n);
-	ft_putunsigned(n);
-	info->format++;
-	info->length = format->length + length;
+	len = numberleng(i);
+	ft_putunsigned(i);
+	*length = *length + len;
 }

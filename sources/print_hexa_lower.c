@@ -6,21 +6,19 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 13:37:27 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/25 17:14:24 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/13 17:14:49 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	print_hexa_lower(t_info info)
+void	print_hexa_lower(unsigned int i, size_t *length)
 {
-	size_t	n;
+	
 	char	*hexa_string;
 
-	n = (unsigned long)(va_arg(info->arg, unsigned long));
-	hexa_string = ft_ulong_to_hexa_lower(n);
+	hexa_string = ft_ulong_to_hexa_lower(i);
 	ft_putstr(hexa_string);
-	info->format++;
-	info->length = info->length + ft_strlen(hexa_string);
+	*length = *length + ft_strlen(hexa_string);
 	return ;
 }

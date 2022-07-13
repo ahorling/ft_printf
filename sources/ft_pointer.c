@@ -6,22 +6,19 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 16:09:08 by ahorling      #+#    #+#                 */
-/*   Updated: 2021/10/25 16:40:42 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/13 17:12:01 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
-void	ft_print_pointer(t_info *info)
+void	ft_print_pointer(unsigned long i, size_t *length)
 {
 	char	*string;
-	int		i;
 
-	i = 0;
 	ft_putstr("0x");
-	string = ft_ulong_to_hexa_lower(info->args, unsigned long);
+	string = ft_ulong_to_hexa_lower(i);
 	ft_putstr(*string);
-	info->length = info->length + ft_strlen(*string);
-	info->format++;
+	*length = *length + ft_strlen(*string);
 }
