@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 16:09:08 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/07/13 17:12:01 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/20 18:08:08 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_print_pointer(unsigned long i, size_t *length)
 
 	ft_putstr("0x");
 	string = ft_ulong_to_hexa_lower(i);
-	ft_putstr(*string);
-	*length = *length + ft_strlen(*string);
+	ft_putstr(string);
+	*length = *length + ft_strlen(string);
 }

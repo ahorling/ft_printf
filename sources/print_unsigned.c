@@ -6,11 +6,12 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 13:15:12 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/07/13 17:18:43 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/20 18:13:30 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "../libft/libft.h"
 
 void	ft_putunsigned(unsigned int n)
 {
@@ -30,7 +31,7 @@ void	print_unsigned(unsigned int i, size_t *length)
 {
 	int			len;
 
-	len = numberleng(i);
+	len = ft_numberleng(i);
 	ft_putunsigned(i);
 	*length = *length + len;
 }

@@ -6,13 +6,18 @@
 #    By: alexander <alexander@student.codam.nl>       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/12/04 10:25:30 by alexander     #+#    #+#                  #
-#    Updated: 2021/10/08 17:43:09 by ahorling      ########   odam.nl          #
+#    Updated: 2022/07/20 18:52:40 by ahorling      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CFLAGS = -Wall -Werror -Wextra
-CC = gcc
+############### CONSTANTS ############
+
+NAME := libft.a
+CFLAGS := -Wall -Werror -Wextra
+CC := gcc
+
+############### SOURCES ##############
+
 SRC = 	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -58,20 +63,32 @@ SRC = 	ft_atoi.c \
 OBJS = $(SRC:.c=.o)
 HEADER = libft.h
 
+############### MESSAGES #############
+
+RUN_MESSAGE	=	"Making libft library"
+MESSAGE_FIN	=	"LIBFT LIBRARY COMPLETE"
+MESSAGE_RM	=	"Cleaned libft library"
+
+############### WORKINGS #############
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo $(MESSAGE_FIN)
 
 %.o: %.c $(HEADER)
-	$(CC) -c $(CFLAGS) -o $@ $<
+	@$(CC) -c $(CFLAGS) -o $@ $<
+	@echo $(RUN_MESSAGE)
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo $(MESSAGE_RM)
+
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

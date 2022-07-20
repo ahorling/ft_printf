@@ -6,11 +6,12 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 13:37:27 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/07/13 17:14:49 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/20 18:09:48 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "../libft/libft.h"
 
 void	print_hexa_lower(unsigned int i, size_t *length)
 {

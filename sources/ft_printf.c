@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 11:57:29 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/07/13 17:01:53 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/20 18:05:53 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	analyze_conversion(va_list arg, size_t *length, char conversion_flag)
 int	ft_printf(const char *format, ...)
 {
 	size_t	length;
-	char	conversion_flag;
 	int	i;
 	va_list	arg;
 
@@ -53,11 +52,10 @@ int	ft_printf(const char *format, ...)
 			i++;
 			length++;
 		}
-		if (*string == '%')
+		if (format[i] == '%')
 		{
 			i++;
-			conversion_flag = format[i];
-			analyze_conversion(arg, &length, conversion_flag);
+			analyze_conversion(arg, &length, format[i]);
 			i++;
 		}
 	}

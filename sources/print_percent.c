@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_percentage.c                                 :+:    :+:            */
+/*   print_percent.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/20 13:57:29 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/07/13 17:16:48 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/07/20 18:12:13 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "../libft/libft.h"
 
-void	print_percentage(size_t *length)
+void	print_percent(size_t *length)
 {
 	ft_putchar('%');
-	*length++;
+	*length += 1;
 	return ;
 }
