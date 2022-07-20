@@ -6,7 +6,7 @@
 #    By: ahorling <ahorling@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/20 16:42:04 by ahorling      #+#    #+#                  #
-#    Updated: 2022/07/20 18:55:34 by ahorling      ########   odam.nl          #
+#    Updated: 2022/07/20 18:58:59 by ahorling      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SOURCES 	:=	ft_printf.c \
 
 LIB_DIR		:=	./libft/libft.a
 SOURCE_DIR 	:=	./sources
-INCLUDE_DIR := 	./includes
+INCLUDE_DIR	:= 	./includes
 OBJECT_DIR	:=	./objects
 OBJECTS 	:= 	$(addprefix $(OBJECT_DIR)/, $(SOURCES:.c=.o))
 
