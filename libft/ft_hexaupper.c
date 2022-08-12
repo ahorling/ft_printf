@@ -6,11 +6,26 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 14:33:53 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/08/01 15:18:45 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/08/12 18:20:29 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_hexlen(unsigned long n)
+{
+	int	size;
+
+	size = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n = n / 16;
+		size++;
+	}
+	return (size);
+}
 
 char	*ft_ulong_to_hexa_upper(unsigned long n)
 {
@@ -22,7 +37,7 @@ char	*ft_ulong_to_hexa_upper(unsigned long n)
 	temp = n;
 	string = (char *)malloc((i + 1) * sizeof(char));
 	if (string == NULL)
-		free(string);
+		return (NULL);
 	string[i] = '\0';
 	while (n != 0)
 	{

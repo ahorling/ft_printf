@@ -6,7 +6,7 @@
 #    By: ahorling <ahorling@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/20 16:42:04 by ahorling      #+#    #+#                  #
-#    Updated: 2022/08/01 15:21:02 by ahorling      ########   odam.nl          #
+#    Updated: 2022/08/12 19:23:04 by ahorling      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,8 @@ $(LIB_DIR):
 
 $(NAME): $(OBJECTS) $(LIB_DIR)
 	@ar rcs $@ $^
-	@cp $(LIB_DIR) $(NAME)
 	@ar -q $(LIB_DIR) $(OBJECTS)
+	@cp $(LIB_DIR) $(NAME)
 	@echo $(MESSAGE_FIN)
 
 $(OBJECT_DIR)/%.o: $(SOURCE_DIR)/%.c
@@ -66,7 +66,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@rm -d $(OBJECT_DIR)
+	@if [ -d "$(OBJECT_DIR)" ]; then rm -d $(OBJECT_DIR); fi
 	@echo $(MESSAGE_FRM)
 
 re: fclean all
