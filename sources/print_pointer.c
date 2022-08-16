@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/08 16:09:08 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/08/16 15:57:55 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/08/16 16:00:39 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,6 @@ void	print_pointer(unsigned long i, size_t *length)
 	ft_putstr("0x");
 	ft_putstr(string);
 	*length = *length + ft_strlen(string) + 2;
+	free (string);
+	return ;
 }
