@@ -6,7 +6,7 @@
 /*   By: ahorling <ahorling@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 14:33:53 by ahorling      #+#    #+#                 */
-/*   Updated: 2022/08/16 15:56:32 by ahorling      ########   odam.nl         */
+/*   Updated: 2022/08/17 16:54:31 by ahorling      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_ulong_to_hexa_upper(unsigned long n)
 	char	*string;
 	int		temp;
 
-	i = ft_hexlen(n) + 1;
+	i = ft_hexlen(n);
 	temp = n;
 	string = (char *)malloc((i + 1) * sizeof(char));
 	if (string == NULL)
